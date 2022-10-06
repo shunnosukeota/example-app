@@ -1,7 +1,7 @@
-<x-layout title="TOP | 誕プレ参考アプリ">
+<x-layout title="TOP | プレツイ">
     <x-layout.single>
-        <h2 class="text-center text-red-500 text-4xl font-bold mt-8 mb-8">
-            誕プレ参考アプリ
+        <h2 class="text-center text-yellow-500 text-4xl font-bold mt-8 mb-8">
+            プレツイ
         </h2>
         <h3 class="text-center text-gray-500 text-xl mt-8 mb-8">
             プレゼント選びに迷ったら投稿を参考に！
