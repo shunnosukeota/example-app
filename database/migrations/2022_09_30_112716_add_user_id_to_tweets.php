@@ -19,6 +19,8 @@ return new class extends Migration
             // usersテーブルのidカラムにuser_idカラムを関連付けます。
             $table->foreign('user_id')->references('id')->on('users');
         });
+
+        
     }
 
     /**

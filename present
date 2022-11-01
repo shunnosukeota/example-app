@@ -1,0 +1,6 @@
+
+> build
+> vite build - sail npm run build
+
+vite v3.1.4 building for production...
+✓ 0 modules transformed.
