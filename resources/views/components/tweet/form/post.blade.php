@@ -3,8 +3,8 @@
     <form action="{{ route('tweet.create') }}" method="post"
     enctype="multipart/form-data">
         @csrf
-        <div class="w-full inline-flex justify-center">
-            <div class="w-full">
+        <div class="mt-1 justify-center">
+            <div>
                 <p class="text-md text-gray-500">
                     お相手
                 </p>
@@ -51,7 +51,7 @@
                     <option value="その他">その他</option>
                 </select>
             </div>
-            <div class="w-full">
+            <div>
                 <p class="text-md text-gray-500">
                     お相手の年齢
                 </p>
@@ -98,7 +98,7 @@
                     <option value="その他">その他</option>
                 </select>
             </div>
-            <div class="">
+            <div>
                 <p class="text-md text-gray-500">
                     シチュエーション
                 </p>
