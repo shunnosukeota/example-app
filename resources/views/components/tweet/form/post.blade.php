@@ -90,17 +90,7 @@
             list-style: none;
             cursor: pointer;
         }
-        .tweets-option[open] > summary::before {
-            
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 10;
-            display: block;
-            content: "";
-            background: transparent;
-        }
+        
         .tweets-option[open] > summary {
             border-bottom: none;
             border-bottom-left-radius: 0%;
