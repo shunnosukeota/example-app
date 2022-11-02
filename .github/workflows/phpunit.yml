@@ -32,39 +32,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-          tools: composer:v2
-      - name: Copy .env
-        run: cp .env.example .env.testing
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: Generate key
-        run: php artisan key:generate --env testing
-      - name: Set hostname
-        run: sudo echo "127.0.0.1 mysql.test" | sudo tee -a /etc/hosts
-      - name: Execute tests (Unit and Feature tests) via PHPUnit
-        run: vendor/bin/phpunit
       - uses: borales/actions-yarn@v2.3.0
-          with:
-            cmd: install
-        - uses: borales/actions-yarn@v2.3.0
-          with:
-            cmd: build
-        - name: ssh key generate
-          run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
-          env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        - name: rsync deployments
-          uses: burnett01/rsync-deployments@5.1
-          with:
-            switches: -avz --delete
-            path: dist/
-            remote_path: ${{ secrets.REMOTE_PATH }}
-            remote_host: ${{ secrets.REMOTE_HOST }}
-            remote_user: ${{ secrets.REMOTE_USER }}
-            remote_port: ${{ secrets.REMOTE_PORT }}
-            remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
+      - name: ssh key generate
+        run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.1
+        with:
+          switches: -avz --delete
+          path: dist/
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_port: ${{ secrets.REMOTE_PORT }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
