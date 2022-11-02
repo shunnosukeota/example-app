@@ -34,7 +34,7 @@
 @push('css')
     <style>
         .tweet-option > summary {
-            list-style: none;
+            list-style-type: none;
             cursor: pointer;
         }
     </style>

@@ -100,7 +100,7 @@
 @push('css')
     <style>
         .rating-option > summary {
-            list-style: none;
+            list-style-type: none;
             cursor: pointer;
         }
         .rating-option[open] > summary::before {

@@ -87,7 +87,7 @@
 @push('css')
     <style>
         .tweets-option > summary {
-            list-style: none;
+            list-style-type: none;
             cursor: pointer;
         }
         
