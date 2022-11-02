@@ -34,8 +34,12 @@
 @push('css')
     <style>
         .tweet-option > summary {
-            list-style-type: none;
+            display: list-item;
+            list-style: none;
             cursor: pointer;
+        }
+        summary::-webkit-details-marker {
+            display:none;
         }
     </style>
 @endpush
