@@ -25,7 +25,9 @@ Route::get('/sample/{id}', [\App\Http\Controllers\Sample\IndexController::class,
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)->name('tweet.index');
 Route::get('/tweet/search', \App\Http\Controllers\Tweet\SearchController::class)->name('tweet.search');
 Route::get('/tweet/content/{tweetId}', \App\Http\Controllers\Tweet\ContentController::class)->name('tweet.content.index');
+Route::get('/tweet/user/{userId}', \App\Http\Controllers\Tweet\UserIndexController::class)->name('tweet.user.index');
 Route::middleware('auth')->group(function () {
+    Route::get('/tweet/マイページ', \App\Http\Controllers\Tweet\MyIndexController::class)->name('tweet.my.index');
     Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class)
         ->name('tweet.create'); //->middleware('auth')は削除
     Route::get('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexController::class)->name('tweet.update.index');

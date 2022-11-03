@@ -121,7 +121,7 @@
 @endforelse
 
 @foreach($tweets as $tweet)
-    <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5">
+    <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 last:mb-20">
         <ul>
             <div class="absolute right-1 py-2">
                     <x-tweet.options :tweetId="$tweet->id" :userId="$tweet->user_id"></x-tweet.options>
@@ -200,3 +200,18 @@
         </ul>
     </div>
 @endforeach
+
+@once
+@push('css')
+
+<style>
+    footer{
+        position:fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+@endpush
+@endonce

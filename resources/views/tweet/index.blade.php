@@ -1,9 +1,6 @@
 <x-layout title="TOP | プレツイ">
     <x-layout.single>
-        <div class="px-2">
-            <h2 class="text-center text-yellow-500 text-4xl font-bold mt-8 mb-8">
-                プレツイ
-            </h2>
+        <div class="px-2 pt-20">
             <h3 class="text-center text-gray-500 text-lg mt-8 mb-8">
                 <div class="inline-flex border-b border-yellow-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 -2 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
@@ -17,3 +14,4 @@
         </div>
     </x-layout.single>
 </x-layout>
+

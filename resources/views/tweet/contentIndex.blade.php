@@ -1,9 +1,7 @@
 <x-layout title="詳細 | プレツイ">
     <x-layout.single>
-        <div class="px-2">
-            <h2 class="text-center text-blue-500 text-4xl font-bold mt-8 mb-8">
-                プレツイ
-            </h2>
+        <div class="px-2 pt-20">
+            
             @php
                 $breadcrumbs = [
                     ['href' => route('tweet.index'), 'label' => 'TOP'],

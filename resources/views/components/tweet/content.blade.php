@@ -2,6 +2,18 @@
     'tweet'
 ])
 
+<div class="text-center">
+    <div class="inline-block text-center">
+    <a href="{{ route('tweet.user.index', ['userId' => $tweet->user->id]) }}">
+        <span class="text-center hover:bg-gray-200 text-gray-600 text-center rounded-full bg-gray-100 px-2 py-1 text-xl mb-2">
+            <span class="border-b border-gray-700">
+            {{$tweet->user->name}}
+            </span>
+        </span>
+    </a>
+    </div>
+</div>
+
 @if($tweet->gift == 'おくりもの')
 <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 border-b border-b-yellow-600">
 @else
@@ -81,3 +93,18 @@
 @if (session('feedback.error'))
     <x-alert.error>{{ session('feedback.error') }}</x-alert.error>
 @endif
+
+@once
+@push('css')
+
+<style>
+    footer{
+        position:fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+@endpush
+@endonce
