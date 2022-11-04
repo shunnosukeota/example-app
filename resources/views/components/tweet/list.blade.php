@@ -6,7 +6,7 @@
     'keyword_a',
     'keyword_s'
 ])
-
+<a id="search" class="anchor"></a>
 <div class="text-gray-500 bg-white mt-4 mb-6 py-2 px-4 border border-gray shadow-sm rounded-md">
     
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-flex mb-1">
@@ -121,7 +121,7 @@
 @endforelse
 
 @foreach($tweets as $tweet)
-    <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 last:mb-20">
+    <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 last:mb-30">
         <ul>
             <div class="absolute right-1 py-2">
                     <x-tweet.options :tweetId="$tweet->id" :userId="$tweet->user_id"></x-tweet.options>
@@ -201,6 +201,9 @@
     </div>
 @endforeach
 
+
+<div class="">{{ $tweets->links() }}</div>
+
 @once
 @push('css')
 
@@ -210,6 +213,11 @@
         left: 0;
         bottom: 0;
         width: 100%;
+    }
+    a.anchor{
+        display: block;
+        padding-top: 70px;
+        margin-top: -70px;
     }
 </style>
 

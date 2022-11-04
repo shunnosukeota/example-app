@@ -9,7 +9,7 @@
     <title>{{ $title ?? 'プレツイ' }}</title>
     @stack('css')
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 mb-20">
     <header class="fixed w-full opacity-90 bg-gray-50 border-b border-yellow-500 z-20">
         <h2 class="text-yellow-500 text-4xl py-2 pl-3 float-left">
             プレツイ
@@ -25,20 +25,31 @@
     </header>
     {{ $slot }}
     <footer class="footer w-full opacity-90 bg-gray-50 border-t border-yellow-500 z-20">
-        <h2 class="text-white text-4xl py-2 pl-3 float-left">
-            プレツイ
-        </h2>
         @auth
-        <form method="post" action="{{ route('logout') }}" class="float-right pt-4">
-            @csrf
-            <div class="justify-end pb-2 px-4">
-                <button
-                        class="text-sm text-gray-500 hover:text-gray-800"
-                        onclick="event.preventDefault(); this.closest('form').submit();"
-                >ログアウト</button>
-            </div>
-        </form>
+        <a href="{{ route('tweet.index') }}#post" class="text-gray-600 float-right p-4 justify-end hover:bg-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 inline-flex mb-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+        </svg>
+        </a>
+        
+        <a href="{{ route('tweet.index') }}#search" class="text-gray-600 float-left p-4 justify-end hover:bg-gray-200">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 inline-flex mb-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+            
+        </a>
         @endauth
+        @guest
+        <div class="">
+            <div class="text-gray-600 float-right p-4 justify-end hover:bg-gray-200">
+                <x-element.button-b :href="route('login')"><span class="border-b border-gray-500">ログイン</span></x-element.button-b>
+            </div>
+            <div class="text-yellow-600 float-left p-4 justify-end hover:bg-gray-200">
+                <x-element.button-b :href="route('register')" theme="secondary"><span class="border-b border-yellow-600">ユーザー登録</span></x-element.button-b>
+            </div>
+        </div>
+        @endguest
     </footer>
 </body>
 </html>

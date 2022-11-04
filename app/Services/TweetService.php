@@ -18,7 +18,7 @@ class TweetService
     
     public function getTweets()
     {
-        return Tweet::with('images')->orderBy('created_at', 'DESC')->get();
+        return Tweet::with('images')->orderBy('created_at', 'DESC')->Paginate(15);   
     }
     
     // 自分のtweetかどうかをチェックするメソッド

@@ -9,12 +9,12 @@
         <select name="relation"
                 class="w-full text-center focus:ring-yellow-400 focus:border-yellow-400 mt-1 block sm:text-sm border border-gray-300 rounded-md text-gray-500 text-center">
             <option value="未選択">未選択</option>
-            <option value="彼女">彼女</option>
-            <option value="彼氏">彼氏</option>
             <option value="女友達（同性）">女友達（同性）</option>
             <option value="男友達（同性）">男友達（同性）</option>
             <option value="女友達（異性）">女友達(異性)</option>
             <option value="男友達（異性）">男友達（異性）</option>
+            <option value="彼女">彼女</option>
+            <option value="彼氏">彼氏</option>
             <option value="妻">妻</option>
             <option value="夫">夫</option>
             <option value="母親">母親</option>
@@ -79,6 +79,7 @@
         <select name="situation"
                 class="w-full text-center focus:ring-yellow-400 focus:border-yellow-400 mt-1 block sm:text-sm border border-gray-300 rounded-md text-gray-500">
             <option value="未選択">未選択</option>
+            <option value="なんとなく">なんとなく</option>
                 <option value="誕生日">誕生日</option>
                 <option value="クリスマス">クリスマス</option>
                 <option value="バレンタイン">バレンタイン</option>
