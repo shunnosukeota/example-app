@@ -5,7 +5,7 @@
             @php
                 $breadcrumbs = [
                     ['href' => route('tweet.index'), 'label' => 'TOP'],
-                    ['href' => '#', 'label' => '詳細']
+                    ['href' => '#', 'label' => " $userName "]
                 ];
             @endphp
             <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>

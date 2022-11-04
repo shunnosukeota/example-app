@@ -47,11 +47,14 @@ class SearchController extends Controller
                 ->orWhere('situation', 'LIKE', "%{$keyword}%");
         }
 
-        $tweets = $query->orderBy('created_at', 'DESC')->get();
+        $countTweets = count($query->get());
+        $tweets = $query->orderBy('created_at', 'DESC')->Paginate(15);
+        
 
 
         return view('tweet.index')
                 ->with('tweets', $tweets)
+                ->with('countTweets', $countTweets)
                 ->with('keyword', $keyword)
                 ->with('keyword_g', $keyword_g)
                 ->with('keyword_r', $keyword_r)

@@ -6,7 +6,7 @@
     <div class="inline-block text-center">
     <a href="{{ route('tweet.user.index', ['userId' => $tweet->user->id]) }}">
         <span class="text-center hover:bg-gray-200 text-gray-600 text-center rounded-full bg-gray-100 px-2 py-1 text-xl mb-2">
-            <span class="border-b border-gray-700">
+            <span class="border-b border-gray-400">
             {{$tweet->user->name}}
             </span>
         </span>

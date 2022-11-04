@@ -1,5 +1,6 @@
 @props([
     'tweets' => [],
+    'countTweets',
     'keyword' => "",
     'keyword_g',
     'keyword_r',
@@ -22,9 +23,9 @@
     @if(!($keyword == " "))
         @once
         <div class="py-2 text-center text-gray-500 font-bold">
-            検索結果：{{ count($tweets) }}件
+            検索結果：{{ $countTweets }}件
         </div>
-            @if(!($keyword_g == "未選択" && $keyword_r == "未選択" && empty($keyword_a) && $keyword_s == "未選択" && empty($keyword)))
+            @if(!($keyword_g == "未選択" && $keyword_r == "未選択" && empty($keyword_a) && $keyword_a != 0 && $keyword_s == "未選択" && empty($keyword)))
                 <div class="bg-white rounded-md shadow-lg text-sm my-5">
                     <div class="px-4 pt-4 pb-3">
                         @if(!($keyword_g == "未選択"))
@@ -43,7 +44,7 @@
                             <div class="inline-flex ml-1 text-gray-500">お相手：<span class="font-bold">{{$keyword_r}}</span></div>
                         </div>
                         @endif
-                        @if(!empty($keyword_a))
+                        @if(!(empty($keyword_a)) || $keyword_a ==0)
                         <div class="inline-flex mb-1 mr-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 -3 24 24" stroke-width="1" stroke="currentColor" class="w-4 h-4 inline-flex">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
@@ -119,6 +120,10 @@
     </div>
 </div>
 @endforelse
+
+
+<div class="">{{ $tweets->links() }}</div>
+
 
 @foreach($tweets as $tweet)
     <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 last:mb-30">
@@ -203,6 +208,7 @@
 
 
 <div class="">{{ $tweets->links() }}</div>
+
 
 @once
 @push('css')

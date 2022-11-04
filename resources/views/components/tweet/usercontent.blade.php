@@ -10,22 +10,22 @@
         {{ count($tweets) }} 件の投稿
     </div>
 </div>
+
 @foreach($tweets as $tweet)
-    <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 last:mb-20">
+    <div class="bg-white relative rounded-md shadow-lg mt-5 mb-5 last:mb-30">
         <ul>
             <div class="absolute right-1 py-2">
                     <x-tweet.options :tweetId="$tweet->id" :userId="$tweet->user_id"></x-tweet.options>
             </div>
-            
             @if($tweet->gift == 'おくりもの')
-            <div class="rounded-md mt-3 border-b border-b-yellow-600 p-4 flex hover:bg-gray-50">
+            <a href="{{ route('tweet.content.index', ['tweetId' => $tweet->id]) }}" class="rounded-md mt-3 border-b border-b-yellow-600 p-4 flex items-start hover:bg-gray-50">
             @else
-            <div class="rounded-md mt-3 border-b border-b-yellow-300 p-4 flex hover:bg-gray-50">
+            <a href="{{ route('tweet.content.index', ['tweetId' => $tweet->id]) }}" class="rounded-md mt-3 border-b border-b-yellow-300 p-4 flex items-start hover:bg-gray-50">
             @endif
                 <div>
-                    <a href="{{ route('tweet.user.index', ['userId' => $tweet->user->id]) }}" class=" rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs mb-2">
+                    <span class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs mb-2">
                         {{ $tweet->user->name }}
-                    </a>
+                    </span>
 
                     <span class="ml-2">
                         @if($tweet->gift == 'おくりもの')
@@ -87,7 +87,6 @@
                     
                     <p class="flex px-2 py-1 text-gray-600 text-xs">{!! nl2br(e($tweet->detail)) !!}</p>
                 </div>
-            </div>
             </a>
         </ul>
     </div>

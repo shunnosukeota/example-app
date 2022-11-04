@@ -11,9 +11,9 @@
 </head>
 <body class="bg-gray-50 mb-20">
     <header class="fixed w-full opacity-90 bg-gray-50 border-b border-yellow-500 z-20">
-        <h2 class="text-yellow-500 text-4xl py-2 pl-3 float-left">
+        <a href="{{ route('tweet.index') }}#top"  class="text-yellow-500 text-4xl py-2 pl-3 float-left">
             プレツイ
-        </h2>
+        </a>
         @auth
         @csrf
         <a href="{{ route('tweet.my.index') }}" class="text-gray-600 float-right p-4 justify-end hover:bg-gray-200">
