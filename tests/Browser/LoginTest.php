@@ -23,7 +23,7 @@ class LoginTest extends DuskTestCase
                     ->type('password', 'password') // パスワードを入力する
                     ->press('LOG IN') // 「LOG IN」ボタンをクリックする
                     ->assertPathIs('/tweet') // /tweetに遷移したことを確認する
-                    ->assertSee('つぶやきアプリ'); // ページ内に「つぶやきアプリ」が表示されていることの確認
+                    ->assertSee('プレツイ'); // ページ内に「プレツイ」が表示されていることの確認
         });
     }
 }
