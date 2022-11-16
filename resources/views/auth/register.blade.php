@@ -64,5 +64,6 @@
                 <p class="text-sm text-gray-600 hover:text-gray-900">
                     {{ __('エラーの場合は再度読み込みをしてください。') }}
                 </p>
+         </div>
     </x-auth-card>
 </x-guest-layout>
