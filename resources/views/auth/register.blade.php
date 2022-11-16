@@ -61,7 +61,7 @@
             </div>
         </form>
          <div class="flex items-center justify-end mt-4">
-                <p class="underline text-sm text-gray-600 hover:text-gray-900">
+                <p class="text-sm text-gray-600 hover:text-gray-900">
                     {{ __('エラーの場合は再度読み込みをしてください。') }}
                 </p>
     </x-auth-card>
